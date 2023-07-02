@@ -6,9 +6,9 @@ metadata:
 spec:
   ports:
     - name: 80-80
-      port: 80
+      port: {{ .Values.wordpress.service.port }}
       protocol: TCP
-      targetPort: 80
+      targetPort: {{ .Values.wordpress.service.targetPort }}
   selector:
     app: wordpress
     tier: frontend

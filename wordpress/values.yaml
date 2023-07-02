@@ -1,5 +1,12 @@
-name: test
-n:
-  - d
-  - d
-  - b
+wordpress:
+  deployment:
+    replicas: 1
+  service:
+    port: 80
+    targetPort: 80
+  hpa:
+    targetCPUUtilizationPercentage: 30
+    minReplicas: 1
+    maxReplicas: 15
+
+

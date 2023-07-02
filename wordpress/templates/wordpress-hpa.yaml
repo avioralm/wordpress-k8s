@@ -3,9 +3,9 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: wordpress
 spec:
-  maxReplicas: 15
-  minReplicas: 1
-  targetCPUUtilizationPercentage: 30
+  maxReplicas: {{.Values.wordpress.hpa.maxReplicas}}
+  minReplicas: {{.Values.wordpress.hpa.minReplicas}}
+  targetCPUUtilizationPercentage: {{.Values.wordpress.hpa.targetCPUUtilizationPercentage}}
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
